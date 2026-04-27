@@ -1,0 +1,21 @@
+site_name: My DevOps Notes
+site_url: https://bhaskar0545.github.io/devopsnotes/
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Kubernetes:
+      - Concepts: kubernetes/concepts.md
+      - Pods: kubernetes/pods.md
+      - Services: kubernetes/services.md
+      - Deployments: kubernetes/deployments.md
+  - Cheatsheets: cheatsheets.md
+  - Troubleshooting: troubleshooting.md
