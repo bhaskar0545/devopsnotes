@@ -2,14 +2,11 @@ site_name: My DevOps Notes
 site_url: https://bhaskar0545.github.io/devopsnotes/
 
 theme:
-  name: readthedocs
-  features:
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - search.suggest
-    - search.highlight
-    - content.code.copy
+  name: cinder
+  colorscheme: dracula
+  hljs_languages:
+    - yaml
+    - bash
 
 nav:
   - Home: index.md
