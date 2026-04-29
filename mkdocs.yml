@@ -2,7 +2,7 @@ site_name: My DevOps Notes
 site_url: https://bhaskar0545.github.io/devopsnotes/
 
 theme:
-  name: mkdocs
+  name: readthedocs
   features:
     - navigation.sections
     - navigation.expand
