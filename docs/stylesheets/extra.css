@@ -168,3 +168,40 @@
     font-size: 0.84rem;
   }
 }
+
+/* Make top tabs handle narrower screens better */
+.md-tabs__inner {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.md-tabs__list {
+  flex-wrap: nowrap;
+  width: max-content;
+  min-width: 100%;
+}
+
+.md-tabs__item {
+  flex: 0 0 auto;
+}
+
+.md-tabs__link {
+  white-space: nowrap;
+}
+
+/* Slightly tighter tabs on medium screens */
+@media screen and (max-width: 1220px) {
+  .md-tabs__link {
+    font-size: 0.74rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+}
+
+/* Slightly tighter header/title on smaller laptops */
+@media screen and (max-width: 960px) {
+  .md-header__title {
+    font-size: 0.95rem;
+  }
+}
