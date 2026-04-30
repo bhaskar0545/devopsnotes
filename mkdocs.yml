@@ -3,11 +3,12 @@ site_url: https://bhaskar0545.github.io/devopsnotes/
 
 theme:
   name: cinder
-  colorscheme: dracula
+  colorscheme: atom-one-light
   hljs_languages:
     - yaml
     - bash
-
+extra_css:
+  - css/extra.css
 nav:
   - Home: index.md
   - Kubernetes:
