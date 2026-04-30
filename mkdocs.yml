@@ -1,20 +1,13 @@
 site_name: My DevOps Notes
+site_description: Personal DevOps and Kubernetes notes
 site_url: https://bhaskar0545.github.io/devopsnotes/
+repo_url: https://github.com/bhaskar0545/devopsnotes
+repo_name: bhaskar0545/devopsnotes
 
 theme:
   name: cinder
-  colorscheme: atom-one-light
-  hljs_languages:
-    - yaml
-    - bash
-    
-extra:
-  collapse_toc: false
-  toc_depth: 3
-  
-extra_css:
-  - https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap
-  - css/extra.css
+  colorscheme: github
+
 nav:
   - Home: index.md
   - Kubernetes:
@@ -24,3 +17,21 @@ nav:
       - Deployments: kubernetes/deployments.md
   - Cheatsheets: cheatsheets.md
   - Troubleshooting: troubleshooting.md
+
+extra:
+  collapse_toc: false
+  toc_depth: 3
+
+extra_css:
+  - https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap
+  - css/extra.css
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - fenced_code
+  - codehilite
+  - admonition
+  - attr_list
+  - md_in_html
