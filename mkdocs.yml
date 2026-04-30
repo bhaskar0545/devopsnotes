@@ -3,6 +3,7 @@ site_description: Personal DevOps and Kubernetes notes
 site_url: https://bhaskar0545.github.io/devopsnotes/
 repo_url: https://github.com/bhaskar0545/devopsnotes
 repo_name: bhaskar0545/devopsnotes
+edit_uri: ""
 
 theme:
   name: mkdocs
@@ -10,7 +11,7 @@ theme:
   collapse_navigation: false
   sticky_navigation: true
   titles_only: false
-  prev_next_buttons_location: bottom
+  prev_next_buttons_location: none
   
 nav:
   - Home: index.md
