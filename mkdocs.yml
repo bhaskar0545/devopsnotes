@@ -1,8 +1,8 @@
 site_name: My DevOps Notes
 site_description: Personal DevOps and Kubernetes notes
 site_url: https://bhaskar0545.github.io/devopsnotes/
-repo_url: https://github.com/bhaskar0545/devopsnotes
-repo_name: bhaskar0545/devopsnotes
+#repo_url: https://github.com/bhaskar0545/devopsnotes
+#repo_name: bhaskar0545/devopsnotes
 edit_uri: ""
 
 theme:
