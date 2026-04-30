@@ -7,11 +7,11 @@ edit_uri: ""
 
 theme:
   name: mkdocs
-  navigation_depth: 3
-  collapse_navigation: false
+  navigation_depth: 4
+  collapse_navigation: true
   sticky_navigation: true
   titles_only: false
-  prev_next_buttons_location: none
+  prev_next_buttons_location: false
   
 nav:
   - Home: index.md
