@@ -1,0 +1,280 @@
+/* -------------------------------------------------
+   Default MkDocs theme with Cayman-style customization
+   ------------------------------------------------- */
+
+:root {
+  --site-gradient: linear-gradient(120deg, #155799 0%, #159957 100%);
+  --site-blue: #155799;
+  --site-green: #159957;
+  --site-link: #1e6bb8;
+  --site-text: #2f3a44;
+  --site-muted: #5c6b78;
+  --site-border: #e6edf3;
+  --site-surface: #f8fbfd;
+}
+
+/* Base */
+body {
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--site-text);
+}
+
+a {
+  color: var(--site-link);
+}
+
+a:hover,
+a:focus {
+  color: var(--site-green);
+  text-decoration: none;
+}
+
+/* Top navbar */
+.navbar {
+  background-image: var(--site-gradient) !important;
+  background-color: var(--site-blue) !important;
+  border: none !important;
+  box-shadow: 0 2px 12px rgba(21, 87, 153, 0.16);
+  min-height: 82px;
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 82px;
+  height: 82px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #ffffff !important;
+}
+
+.navbar-nav > li > a {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 50px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  border-radius: 10px;
+  border: 1px solid var(--site-border);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.dropdown-menu > li > a {
+  font-size: 0.96rem;
+  padding: 10px 16px;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: #eef8f3;
+  color: var(--site-blue);
+}
+
+/* Sidebar */
+.wy-side-nav-search,
+.wy-nav-side {
+  background: #ffffff;
+}
+
+.wy-menu-vertical {
+  background: var(--site-surface);
+  border-right: 1px solid var(--site-border);
+  padding-top: 12px;
+}
+
+.wy-menu-vertical a {
+  color: #3b4b59;
+  font-size: 0.95rem;
+}
+
+.wy-menu-vertical a:hover {
+  background-color: #eef6fb;
+  color: var(--site-blue);
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.current > a:hover {
+  background: #eef8f3;
+  color: var(--site-blue);
+  border-right: 3px solid var(--site-green);
+  font-weight: 700;
+}
+
+/* Main content */
+.wy-nav-content {
+  max-width: 1000px;
+  background: #ffffff;
+}
+
+.wy-nav-content-wrap {
+  background: #ffffff;
+}
+
+.rst-content {
+  color: var(--site-text);
+}
+
+.rst-content h1,
+.rst-content h2,
+.rst-content h3,
+.rst-content h4,
+.rst-content h5,
+.rst-content h6 {
+  color: #24313d;
+  font-weight: 700;
+}
+
+.rst-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.rst-content h2 {
+  font-size: 1.9rem;
+  margin-top: 1.9rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--site-border);
+}
+
+.rst-content h3 {
+  font-size: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.rst-content p,
+.rst-content li {
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+/* TOC and section lists */
+.rst-content .toc-backref {
+  color: inherit;
+}
+
+.rst-content .toctree-wrapper > p.caption {
+  color: var(--site-blue);
+  font-weight: 700;
+}
+
+/* Code */
+pre,
+code,
+.rst-content tt,
+.rst-content code {
+  font-size: 0.94rem;
+  border-radius: 8px;
+}
+
+.rst-content pre {
+  border: 1px solid var(--site-border);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+/* Tables */
+.rst-content table.docutils,
+.rst-content table.field-list {
+  border: 1px solid var(--site-border);
+}
+
+.rst-content table.docutils th,
+.rst-content table.field-list th {
+  background: #f4f8fb;
+}
+
+.rst-content table.docutils th,
+.rst-content table.docutils td {
+  padding: 10px 14px;
+}
+
+/* Blockquotes */
+.rst-content blockquote {
+  border-left: 4px solid var(--site-green);
+  background: #f6fbf8;
+  padding: 12px 16px;
+  color: #415261;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Prev / Next buttons */
+.btn,
+.btn-neutral {
+  border-radius: 8px !important;
+}
+
+.btn-neutral:hover,
+.btn-neutral:focus {
+  background-color: #eef8f3 !important;
+  color: var(--site-blue) !important;
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+  body {
+    font-size: 17px;
+  }
+
+  .navbar {
+    min-height: 68px;
+  }
+
+  .navbar-brand {
+    font-size: 1.6rem;
+    line-height: 68px;
+    height: 68px;
+  }
+
+  .navbar-nav > li > a {
+    line-height: 1.4;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  .navbar-brand {
+    font-size: 1.35rem;
+  }
+
+  .rst-content h1 {
+    font-size: 2rem;
+  }
+
+  .rst-content h2 {
+    font-size: 1.55rem;
+  }
+
+  .rst-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .rst-content p,
+  .rst-content li {
+    font-size: 1rem;
+  }
+}
