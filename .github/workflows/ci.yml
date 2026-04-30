@@ -27,5 +27,5 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: python -m pip install --upgrade pip
-      - run: pip install mkdocs mkdocs-cinder
+      - run: pip install mkdocs mkdocs-material #mkdocs-cinder
       - run: mkdocs gh-deploy --force

@@ -5,25 +5,8 @@ repo_url: https://github.com/bhaskar0545/devopsnotes
 repo_name: bhaskar0545/devopsnotes
 
 theme:
-  name: material
-  language: en
-  palette:
-    scheme: default
-    primary: custom
-    accent: custom
-  features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - toc.follow
-    - search.suggest
-    - search.highlight
-    - content.code.copy
-  font:
-    text: Lato
-    code: Roboto Mono
+  name: cinder
+  colorscheme: github
 
 nav:
   - Home: index.md
@@ -37,14 +20,20 @@ nav:
       - Troubleshooting: troubleshooting.md
       - Cheatsheet: cheatsheets.md
 
+extra:
+  collapse_toc: false
+  toc_depth: 3
+
+extra_css:
+  - https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap
+  - css/extra.css
+
 markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - fenced_code
+  - codehilite
   - admonition
   - attr_list
   - md_in_html
-  - tables
-  - fenced_code
-  - toc:
-      permalink: true
-
-extra_css:
-  - stylesheets/extra.css
