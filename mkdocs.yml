@@ -5,26 +5,13 @@ repo_url: https://github.com/bhaskar0545/devopsnotes
 repo_name: bhaskar0545/devopsnotes
 
 theme:
-  name: material
-  language: en
-  palette:
-    scheme: default
-    primary: custom
-    accent: custom
-  features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - toc.follow
-    - search.suggest
-    - search.highlight
-    - content.code.copy
-  font:
-    text: Lato
-    code: Roboto Mono
-
+  name: mkdocs
+  navigation_depth: 3
+  collapse_navigation: false
+  sticky_navigation: true
+  titles_only: false
+  prev_next_buttons_location: bottom
+  
 nav:
   - Home: index.md
   - ML Ops:
@@ -47,4 +34,4 @@ markdown_extensions:
       permalink: true
 
 extra_css:
-  - stylesheets/extra.css
+  - css/extra.css
