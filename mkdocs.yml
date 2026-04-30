@@ -10,13 +10,15 @@ theme:
 
 nav:
   - Home: index.md
+  - ML Ops:
+      - Refs: MLOps/Refs.md
   - Kubernetes:
       - Concepts: kubernetes/concepts.md
       - Pods: kubernetes/pods.md
       - Services: kubernetes/services.md
       - Deployments: kubernetes/deployments.md
-  - Cheatsheets: cheatsheets.md
-  - Troubleshooting: troubleshooting.md
+      - Troubleshooting: troubleshooting.md
+      - Cheatsheet: cheatsheets.md
 
 extra:
   collapse_toc: false
