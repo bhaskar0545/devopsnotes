@@ -34,4 +34,5 @@ markdown_extensions:
       permalink: true
 
 extra_css:
+  - https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap
   - css/extra.css
