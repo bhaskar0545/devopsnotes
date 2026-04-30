@@ -7,7 +7,13 @@ theme:
   hljs_languages:
     - yaml
     - bash
+    
+extra:
+  collapse_toc: false
+  toc_depth: 3
+  
 extra_css:
+  - https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap
   - css/extra.css
 nav:
   - Home: index.md
