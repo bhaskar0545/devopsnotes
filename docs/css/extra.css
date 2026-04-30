@@ -1,5 +1,6 @@
 /* -------------------------------------------------
    Default MkDocs theme with Cayman-style customization
+   Brand on first row, nav on second row
    ------------------------------------------------- */
 
 :root {
@@ -15,7 +16,7 @@
 
 /* Base */
 body {
-  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
   line-height: 1.75;
   color: var(--site-text);
@@ -37,17 +38,33 @@ a:focus {
   background-color: var(--site-blue) !important;
   border: none !important;
   box-shadow: 0 2px 12px rgba(21, 87, 153, 0.16);
-  min-height: 82px;
+  min-height: 120px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+/* Site title on its own row */
+.navbar-header {
+  width: 100%;
+  float: none;
 }
 
 .navbar-brand {
+  float: none;
+  display: block;
   color: #ffffff !important;
-  font-size: 2rem;
+  font-family: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 2.2rem;
   font-weight: 700;
-  line-height: 82px;
-  height: 82px;
-  padding-top: 0;
-  padding-bottom: 0;
+  line-height: 1.2;
+  height: auto;
+  padding: 10px 0 18px 0;
 }
 
 .navbar-brand:hover,
@@ -55,13 +72,35 @@ a:focus {
   color: #ffffff !important;
 }
 
+/* Nav below the title */
+.navbar-collapse {
+  width: 100%;
+  border-top: none;
+  box-shadow: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-nav {
+  float: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navbar-nav > li {
+  float: none;
+}
+
 .navbar-nav > li > a {
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: rgba(255, 255, 255, 0.96) !important;
+  font-family: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  line-height: 50px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  line-height: 1.4;
+  padding: 10px 16px;
+  border-radius: 8px;
 }
 
 .navbar-nav > li > a:hover,
@@ -71,6 +110,19 @@ a:focus {
 .navbar-default .navbar-nav > .active > a:focus {
   color: #ffffff !important;
   background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Search stays aligned in nav area if present */
+.navbar-form {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 10px;
+}
+
+.navbar-form .form-control {
+  border-radius: 8px;
+  border: none;
+  box-shadow: none;
 }
 
 /* Dropdown menu */
@@ -133,6 +185,7 @@ a:focus {
 
 .rst-content {
   color: var(--site-text);
+  font-family: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 .rst-content h1,
@@ -168,16 +221,6 @@ a:focus {
   line-height: 1.75;
 }
 
-/* TOC and section lists */
-.rst-content .toc-backref {
-  color: inherit;
-}
-
-.rst-content .toctree-wrapper > p.caption {
-  color: var(--site-blue);
-  font-weight: 700;
-}
-
 /* Code */
 pre,
 code,
@@ -187,48 +230,6 @@ code,
   border-radius: 8px;
 }
 
-.rst-content pre {
-  border: 1px solid var(--site-border);
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
-}
-
-/* Tables */
-.rst-content table.docutils,
-.rst-content table.field-list {
-  border: 1px solid var(--site-border);
-}
-
-.rst-content table.docutils th,
-.rst-content table.field-list th {
-  background: #f4f8fb;
-}
-
-.rst-content table.docutils th,
-.rst-content table.docutils td {
-  padding: 10px 14px;
-}
-
-/* Blockquotes */
-.rst-content blockquote {
-  border-left: 4px solid var(--site-green);
-  background: #f6fbf8;
-  padding: 12px 16px;
-  color: #415261;
-  border-radius: 0 8px 8px 0;
-}
-
-/* Prev / Next buttons */
-.btn,
-.btn-neutral {
-  border-radius: 8px !important;
-}
-
-.btn-neutral:hover,
-.btn-neutral:focus {
-  background-color: #eef8f3 !important;
-  color: var(--site-blue) !important;
-}
-
 /* Mobile */
 @media (max-width: 991px) {
   body {
@@ -236,19 +237,17 @@ code,
   }
 
   .navbar {
-    min-height: 68px;
+    min-height: 100px;
   }
 
   .navbar-brand {
-    font-size: 1.6rem;
-    line-height: 68px;
-    height: 68px;
+    font-size: 1.8rem;
+    padding-bottom: 12px;
   }
 
   .navbar-nav > li > a {
-    line-height: 1.4;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 8px 12px;
+    font-size: 0.95rem;
   }
 }
 
@@ -257,8 +256,25 @@ code,
     font-size: 16px;
   }
 
+  .navbar {
+    min-height: auto;
+  }
+
+  .navbar .container {
+    display: block;
+  }
+
   .navbar-brand {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
+    padding: 8px 0;
+  }
+
+  .navbar-nav {
+    display: block;
+  }
+
+  .navbar-nav > li > a {
+    border-radius: 0;
   }
 
   .rst-content h1 {
