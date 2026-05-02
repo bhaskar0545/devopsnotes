@@ -1,30 +1,18 @@
 site_name: My DevOps Notes
 site_description: Personal DevOps and Kubernetes notes
 site_url: https://bhaskar0545.github.io/devopsnotes/
-repo_url: https://github.com/bhaskar0545/devopsnotes
-repo_name: bhaskar0545/devopsnotes
+#repo_url: https://github.com/bhaskar0545/devopsnotes
+#repo_name: bhaskar0545/devopsnotes
+edit_uri: ""
 
 theme:
-  name: material
-  language: en
-  palette:
-    scheme: default
-    primary: custom
-    accent: custom
-  features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - toc.follow
-    - search.suggest
-    - search.highlight
-    - content.code.copy
-  font:
-    text: Lato
-    code: Roboto Mono
-
+  name: mkdocs
+  navigation_depth: 4
+  collapse_navigation: true
+  sticky_navigation: true
+  titles_only: false
+  prev_next_buttons_location: false
+  
 nav:
   - Home: index.md
   - ML Ops:
@@ -45,4 +33,5 @@ markdown_extensions:
       permalink: true
 
 extra_css:
-  - stylesheets/extra.css
+  - https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap
+  - css/extra.css
