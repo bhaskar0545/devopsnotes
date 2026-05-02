@@ -28,12 +28,10 @@ theme:
 nav:
   - Home: index.md
   - ML Ops:
+      - Basics: MLOps/Basics.md
       - Refs: MLOps/Refs.md
-  - Kubernetes:
-      - Concepts: kubernetes/concepts.md
-      - Pods: kubernetes/pods.md
-      - Services: kubernetes/services.md
-      - Deployments: kubernetes/deployments.md
+  - K8s:
+      - Basics: kubernetes/concepts.md
       - Troubleshooting: troubleshooting.md
       - Cheatsheet: cheatsheets.md
 
