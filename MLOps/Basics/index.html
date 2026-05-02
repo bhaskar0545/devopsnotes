@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://bhaskar0545.github.io/devopsnotes/MLOps/Basics/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Basics - My DevOps Notes</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="../../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My DevOps Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ML Ops</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Basics</a>
+</li>
+                                    
+<li>
+    <a href="../Refs/" class="dropdown-item">Refs</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">K8s</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../kubernetes/concepts/" class="dropdown-item">Basics</a>
+</li>
+                                    
+<li>
+    <a href="../../troubleshooting.md" class="dropdown-item">Troubleshooting</a>
+</li>
+                                    
+<li>
+    <a href="../../cheatsheets.md" class="dropdown-item">Cheatsheet</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../.." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Refs/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#what-is-machine-learning" class="nav-link">What is Machine Learning?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#what-is-a-model" class="nav-link">What is a Model?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#steps-to-create-a-model" class="nav-link">Steps to create a Model</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#start-with-a-small-dataset" class="nav-link">Start with a Small Dataset</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#split-the-data-train-vs-test" class="nav-link">Split the Data: Train vs Test</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#choose-a-simple-model" class="nav-link">Choose a Simple Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#train-the-model" class="nav-link">Train the Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#test-the-model" class="nav-link">Test the Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#improve-if-needed" class="nav-link">Improve (If Needed)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#save-the-model" class="nav-link">Save the Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="what-is-machine-learning">What is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="Permanent link">&para;</a></h2>
+<p><strong>Machine Learning (ML)</strong> is a branch of <strong>Artificial Intelligence (AI)</strong> that enables computers to <strong>learn from data and improve their performance without being explicitly programmed for every task</strong>.</p>
+<p>With normal programming, you write rules yourself. With machine learning, you give the computer examples, and it figures out the rules.</p>
+<p><strong>Example:</strong>
+Think about <strong>email spam detection</strong>:
+- You don’t manually tell the computer every spam rule
+- The system learns from thousands of emails labeled <em>spam</em> or <em>not spam</em>
+- Over time, it gets better at identifying spam automatically
+That learning process is <strong>machine learning</strong>.</p>
+<h2 id="what-is-a-model">What is a Model?<a class="headerlink" href="#what-is-a-model" title="Permanent link">&para;</a></h2>
+<p>A model is the final output of machine learning.
+It is not the data. It is not the algorithm. It is the pattern the algorithm learned from the data.</p>
+<p>Think of the model as:
+A mathematical function the computer created 
+- It takes inputs
+- It outputs predictions (spam mail)</p>
+<h2 id="steps-to-create-a-model">Steps to create a Model<a class="headerlink" href="#steps-to-create-a-model" title="Permanent link">&para;</a></h2>
+<p><em>How Data Scientists Create a Simple Model.</em></p>
+<p>Think of this as the “hello world” of ML.</p>
+<h3 id="start-with-a-small-dataset">Start with a Small Dataset<a class="headerlink" href="#start-with-a-small-dataset" title="Permanent link">&para;</a></h3>
+<p>Every model begins with data.
+Example: You want to predict a spam mail based on data like:
+- Set of spam mails.
+- Set of not spam mails.
+This dataset will have:
+Inputs (features): the spam mails with spam data
+Output (label): the spam mails</p>
+<h3 id="split-the-data-train-vs-test">Split the Data: Train vs Test<a class="headerlink" href="#split-the-data-train-vs-test" title="Permanent link">&para;</a></h3>
+<p>Before training, data scientists split the dataset into:
+- Training data (usually ~80%) The part the model learns from.
+- Testing data (usually ~20%) The part used later to check if the model learned properly.</p>
+<p>Why? Because you should never test a student with questions they already memorized.</p>
+<h3 id="choose-a-simple-model">Choose a Simple Model<a class="headerlink" href="#choose-a-simple-model" title="Permanent link">&para;</a></h3>
+<p>For beginners, data scientists usually start with a simple algorithm, like:
+- Logistic Regression (for classification)
+- Decision Tree
+- k-Nearest Neighbors (KNN)</p>
+<p>For the spam mail example, Logistic Regression or Decision Tree works great.</p>
+<h3 id="train-the-model">Train the Model<a class="headerlink" href="#train-the-model" title="Permanent link">&para;</a></h3>
+<p>Training means:
+- Give the model training data
+- Let it “learn” patterns between measurements and flower species
+- Internally, the model adjusts itself to reduce mistakes</p>
+<p>You don’t manually code patterns. The model learns them automatically.</p>
+<h3 id="test-the-model">Test the Model<a class="headerlink" href="#test-the-model" title="Permanent link">&para;</a></h3>
+<p>Now, evaluate it using the test data.</p>
+<p>The goal is to see:
+- How many predictions are correct?
+- Where is the model making mistakes?
+This step tells you if the model is ready or needs improvement.</p>
+<h3 id="improve-if-needed">Improve (If Needed)<a class="headerlink" href="#improve-if-needed" title="Permanent link">&para;</a></h3>
+<p>Beginners usually follow simple improvement steps:
+- Remove noisy or incorrect data
+- Try a different model
+- Tune settings (called hyperparameters)
+- Add more training samples</p>
+<p>Even small changes can boost accuracy.</p>
+<h3 id="save-the-model">Save the Model<a class="headerlink" href="#save-the-model" title="Permanent link">&para;</a></h3>
+<p>Once the model performs well, you save it as a file. 
+Example formats:
+- .pkl
+- .joblib
+- .onnx</p>
+<p>This saved model can now be used by:
+- Apps
+- Websites
+- Backend microservices
+- MLOps pipelines
+and This is what gets deployed.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

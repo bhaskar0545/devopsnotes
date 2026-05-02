@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://bhaskar0545.github.io/devopsnotes/</loc>
+         <lastmod>2026-05-02</lastmod>
+    </url>
+    <url>
+         <loc>https://bhaskar0545.github.io/devopsnotes/MLOps/Basics/</loc>
+         <lastmod>2026-05-02</lastmod>
+    </url>
+    <url>
+         <loc>https://bhaskar0545.github.io/devopsnotes/MLOps/Refs/</loc>
+         <lastmod>2026-05-02</lastmod>
+    </url>
+    <url>
+         <loc>https://bhaskar0545.github.io/devopsnotes/kubernetes/concepts/</loc>
+         <lastmod>2026-05-02</lastmod>
+    </url>
+</urlset>
