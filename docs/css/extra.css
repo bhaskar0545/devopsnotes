@@ -60,3 +60,20 @@ a[rel="next"],
   padding-left: 12px;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
+
+/* Push search to the far right in Lux / MkDocs navbar */
+.navbar-nav.navbar-right,
+.navbar-right {
+  float: right !important;
+  margin-right: 0 !important;
+}
+
+.navbar-form.navbar-right,
+.navbar-right.navbar-form {
+  float: right !important;
+}
+
+/* Keep left-side nav on the left */
+.navbar-nav:not(.navbar-right) {
+  float: left;
+}
