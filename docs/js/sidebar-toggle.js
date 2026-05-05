@@ -1,15 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const sidebar = document.querySelector(".bs-sidebar, .navbar + .container .col-md-3, .col-md-3[role='complementary']");
+  const sidebar = document.querySelector(".bs-sidebar");
   if (!sidebar) return;
 
-  const lists = sidebar.querySelectorAll("li > ul");
-  lists.forEach(function (sublist) {
-    const parentLi = sublist.parentElement;
-    const trigger = parentLi.querySelector(":scope > a");
-    if (!trigger) return;
+  const items = sidebar.querySelectorAll("li");
 
-    parentLi.classList.add("has-children");
-    parentLi.classList.add("is-collapsed");
+  items.forEach(function (item) {
+    const directSublist = Array.from(item.children).find(function (child) {
+      return child.tagName === "UL";
+    });
+
+    const directLink = Array.from(item.children).find(function (child) {
+      return child.tagName === "A";
+    });
+
+    if (!directSublist || !directLink) return;
+
+    item.classList.add("has-children");
 
     const button = document.createElement("button");
     button.type = "button";
@@ -18,26 +24,41 @@ document.addEventListener("DOMContentLoaded", function () {
     button.setAttribute("aria-label", "Expand section");
     button.innerHTML = '<span class="sidebar-caret"></span>';
 
-    trigger.insertAdjacentElement("afterend", button);
-    sublist.style.display = "none";
+    directLink.insertAdjacentElement("afterend", button);
+
+    const isActiveBranch =
+      item.classList.contains("active") ||
+      item.querySelector("li.active, a.active, .active") !== null;
+
+    if (isActiveBranch) {
+      item.classList.add("is-expanded");
+      directSublist.style.display = "block";
+      button.setAttribute("aria-expanded", "true");
+      button.setAttribute("aria-label", "Collapse section");
+    } else {
+      item.classList.add("is-collapsed");
+      directSublist.style.display = "none";
+    }
 
     button.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
 
-      const expanded = parentLi.classList.toggle("is-expanded");
-      parentLi.classList.toggle("is-collapsed", !expanded);
-      sublist.style.display = expanded ? "block" : "none";
-      button.setAttribute("aria-expanded", expanded ? "true" : "false");
-      button.setAttribute("aria-label", expanded ? "Collapse section" : "Expand section");
-    });
+      const expanded = item.classList.contains("is-expanded");
 
-    if (parentLi.classList.contains("active") || parentLi.querySelector(".active")) {
-      parentLi.classList.add("is-expanded");
-      parentLi.classList.remove("is-collapsed");
-      sublist.style.display = "block";
-      button.setAttribute("aria-expanded", "true");
-      button.setAttribute("aria-label", "Collapse section");
-    }
+      if (expanded) {
+        item.classList.remove("is-expanded");
+        item.classList.add("is-collapsed");
+        directSublist.style.display = "none";
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Expand section");
+      } else {
+        item.classList.remove("is-collapsed");
+        item.classList.add("is-expanded");
+        directSublist.style.display = "block";
+        button.setAttribute("aria-expanded", "true");
+        button.setAttribute("aria-label", "Collapse section");
+      }
+    });
   });
 });

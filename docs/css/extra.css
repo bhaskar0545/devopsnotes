@@ -10,27 +10,31 @@ a[rel="next"],
 }
 
 /* Sidebar toggle support for Lux */
-.bs-sidebar .nav > li,
+
 .bs-sidebar .nav li {
   position: relative;
 }
 
 .bs-sidebar .nav li.has-children > a {
   display: inline-block;
-  width: calc(100% - 36px);
+  width: calc(100% - 34px);
+}
+
+.bs-sidebar .nav li:not(.has-children) > .sidebar-toggle-btn {
+  display: none !important;
 }
 
 .sidebar-toggle-btn {
   position: absolute;
   top: 6px;
   right: 0;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border: 0;
   background: transparent;
   cursor: pointer;
   padding: 0;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .sidebar-toggle-btn:hover,
@@ -41,39 +45,23 @@ a[rel="next"],
 
 .sidebar-caret {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid #7a7a7a;
-  border-bottom: 2px solid #7a7a7a;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid #777;
+  border-bottom: 2px solid #777;
   transform: rotate(-45deg);
   transition: transform 0.2s ease;
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .bs-sidebar .nav li.is-expanded > .sidebar-toggle-btn .sidebar-caret {
   transform: rotate(45deg);
 }
 
-.bs-sidebar .nav li > ul {
-  margin-top: 6px;
-  margin-left: 12px;
-  padding-left: 12px;
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
+.bs-sidebar .nav li.is-collapsed > ul {
+  display: none;
 }
 
-/* Push search to the far right in Lux / MkDocs navbar */
-.navbar-nav.navbar-right,
-.navbar-right {
-  float: right !important;
-  margin-right: 0 !important;
-}
-
-.navbar-form.navbar-right,
-.navbar-right.navbar-form {
-  float: right !important;
-}
-
-/* Keep left-side nav on the left */
-.navbar-nav:not(.navbar-right) {
-  float: left;
+.bs-sidebar .nav li.is-expanded > ul {
+  display: block;
 }
