@@ -1,15 +1,5 @@
-# DevOps Notes
+# My personal DevOps and MLOps Notes
 
-My personal DevOps notes.
+![logo](images/word_cloud.png)
 
-## Sections
-
-- Concepts
-- Pods
-- Services
-- Deployments
-- Cheatsheets
-- Troubleshooting
-
-## Test section
-### test sub section
+[Reach me @](mailto:bhaskar0545@gmail.com)
