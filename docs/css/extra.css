@@ -65,3 +65,14 @@ a[rel="next"],
 .bs-sidebar .nav li.is-expanded > ul {
   display: block;
 }
+
+/* Main page content only: slightly larger and darker body text */
+[role="main"] p,
+[role="main"] li,
+[role="main"] td,
+[role="main"] th,
+[role="main"] blockquote {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: #2f2f2f;
+}
