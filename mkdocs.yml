@@ -19,13 +19,13 @@ nav:
   - ML Ops:
       - Basics: MLOps/Basics.md
       - DVC:
-          - DVC Tools:
+          - DVC Tools: MLOps/dvc.md
       - Refs: MLOps/Refs.md
   - K8s:
       - Basics: kubernetes/concepts.md
       - Networking:
-          - Service:
-          - Ingress:
+          - Service: kubernetes/service.md
+          - Ingress: kubernets/ingress.md
       - Troubleshooting: troubleshooting.md
       - Cheatsheet: cheatsheets.md
 
