@@ -7,6 +7,7 @@ edit_uri: ""
 
 theme:
   name: lux #mkdocs
+  custom_dir: overrides
   #navigation_depth: 4
   #collapse_navigation: true
   #sticky_navigation: true
@@ -17,11 +18,19 @@ nav:
   - Home: index.md
   - ML Ops:
       - Basics: MLOps/Basics.md
+      - DVC:
+          - DVC Tools:
       - Refs: MLOps/Refs.md
   - K8s:
       - Basics: kubernetes/concepts.md
+      - Networking:
+          - Service:
+          - Ingress:
       - Troubleshooting: troubleshooting.md
       - Cheatsheet: cheatsheets.md
+
+plugins:
+  - search
 
 markdown_extensions:
   - admonition
