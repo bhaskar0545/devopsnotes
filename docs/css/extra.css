@@ -1,4 +1,53 @@
-/* Hide Previous / Next links if still present */
+/* -------------------------------------------------
+   Lux customizations
+   - site title on first row
+   - nav on second row
+   - search on right
+   - hide prev/next
+   - sidebar toggle support
+   - slightly larger/darker page content only
+   ------------------------------------------------- */
+
+/* Header layout */
+.nav-stacked-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.site-title-row {
+  width: 100%;
+  margin-bottom: 0.35rem;
+}
+
+.site-title-row .navbar-brand {
+  display: inline-block;
+  float: none;
+  margin-right: 0;
+  padding-top: 0.15rem;
+  padding-bottom: 0.35rem;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.nav-second-row {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.nav-second-row > .navbar-nav:first-child {
+  flex: 1 1 auto;
+}
+
+.nav-second-row > .navbar-nav.ms-md-auto {
+  margin-left: auto;
+}
+
+/* Hide Previous / Next links */
 a[rel="prev"],
 a[rel="next"],
 .nav-link[rel="prev"],
@@ -9,8 +58,18 @@ a[rel="next"],
   display: none !important;
 }
 
-/* Sidebar toggle support for Lux */
+/* Main page content only: slightly larger and darker body text */
+[role="main"] p,
+[role="main"] li,
+[role="main"] td,
+[role="main"] th,
+[role="main"] blockquote {
+  font-size: 1.06rem;
+  line-height: 1.8;
+  color: #2f2f2f;
+}
 
+/* Sidebar toggle support */
 .bs-sidebar .nav li {
   position: relative;
 }
@@ -18,10 +77,6 @@ a[rel="next"],
 .bs-sidebar .nav li.has-children > a {
   display: inline-block;
   width: calc(100% - 34px);
-}
-
-.bs-sidebar .nav li:not(.has-children) > .sidebar-toggle-btn {
-  display: none !important;
 }
 
 .sidebar-toggle-btn {
@@ -66,13 +121,17 @@ a[rel="next"],
   display: block;
 }
 
-/* Main page content only: slightly larger and darker body text */
-[role="main"] p,
-[role="main"] li,
-[role="main"] td,
-[role="main"] th,
-[role="main"] blockquote {
-  font-size: 1.08rem;
-  line-height: 1.8;
-  color: #2f2f2f;
+/* Mobile */
+@media (max-width: 991.98px) {
+  .nav-second-row {
+    display: block !important;
+  }
+
+  .site-title-row {
+    margin-bottom: 0;
+  }
+
+  .site-title-row .navbar-brand {
+    font-size: 1.45rem;
+  }
 }

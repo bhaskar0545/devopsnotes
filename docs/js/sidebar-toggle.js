@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (!directSublist || !directLink) return;
-    if (directSublist.querySelectorAll(":scope > li").length === 0) return;
+    if (directSublist.children.length === 0) return;
 
     item.classList.add("has-children");
 
