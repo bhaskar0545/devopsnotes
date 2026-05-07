@@ -1,3 +1,5 @@
 ![logo](images/word_cloud_white.png)
-                     **My personal DevOps and MLOps Notes**  
-                          [bhaskar0545@gmail.com](mailto:bhaskar0545@gmail.com) 
+<p style="text-align: center;">
+  <strong>My personal DevOps and MLOps Notes</strong><br>
+  <a href="mailto:bhaskar0545@gmail.com">bhaskar0545@gmail.com</a>
+</p>
