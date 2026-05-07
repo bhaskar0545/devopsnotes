@@ -1,19 +1,12 @@
 site_name: My DevOps Notes
 site_description: Personal DevOps and Kubernetes notes
 site_url: https://bhaskar0545.github.io/devopsnotes/
-#repo_url: https://github.com/bhaskar0545/devopsnotes
-#repo_name: bhaskar0545/devopsnotes
 edit_uri: ""
 
 theme:
-  name: lux #mkdocs
+  name: lux
   custom_dir: overrides
-  #navigation_depth: 4
-  #collapse_navigation: true
-  #sticky_navigation: true
-  #titles_only: false
-  #prev_next_buttons_location: false
-  
+
 nav:
   - Home: index.md
   - ML Ops:
@@ -42,7 +35,6 @@ markdown_extensions:
       permalink: true
 
 extra_css:
-  - https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap
   - css/extra.css
 
 extra_javascript:
