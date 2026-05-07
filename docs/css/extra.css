@@ -2,63 +2,54 @@
    Lux customizations
    - site title on first row
    - nav on second row
-   - search on right
-   - hide prev/next
-   - sidebar toggle support
+   - search stays on right
    - slightly larger/darker page content only
+   - sidebar toggle support
    ------------------------------------------------- */
 
-/* Header layout */
-.nav-stacked-layout {
+/* ===== Navbar layout ===== */
+
+.navbar .container {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  padding-top: 0.35rem;
-  padding-bottom: 0.35rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.site-title-row {
-  width: 100%;
-  margin-bottom: 0.35rem;
-}
-
-.site-title-row .navbar-brand {
-  display: inline-block;
+/* Force site title onto its own row */
+.navbar .navbar-brand {
+  display: block;
   float: none;
+  width: 100%;
   margin-right: 0;
-  padding-top: 0.15rem;
-  padding-bottom: 0.35rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.45rem;
   font-size: 1.8rem;
   line-height: 1.2;
 }
 
-.nav-second-row {
+/* Second row for nav/search */
+.navbar .navbar-collapse {
+  width: 100%;
   display: flex !important;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  flex-wrap: wrap;
 }
 
-.nav-second-row > .navbar-nav:first-child {
+/* Left nav takes remaining space */
+.navbar .navbar-collapse > .navbar-nav:first-child {
   flex: 1 1 auto;
 }
 
-.nav-second-row > .navbar-nav.ms-md-auto {
+/* Right group stays right */
+.navbar .navbar-collapse > .navbar-nav.ms-md-auto,
+.navbar .navbar-collapse > .navbar-right,
+.navbar .navbar-collapse > ul:last-child {
   margin-left: auto;
 }
 
-/* Hide Previous / Next links */
-a[rel="prev"],
-a[rel="next"],
-.nav-link[rel="prev"],
-.nav-link[rel="next"],
-.rst-footer-buttons,
-.pagination,
-.pager {
-  display: none !important;
-}
+/* ===== Main page content only ===== */
 
-/* Main page content only: slightly larger and darker body text */
 [role="main"] p,
 [role="main"] li,
 [role="main"] td,
@@ -69,7 +60,18 @@ a[rel="next"],
   color: #2f2f2f;
 }
 
-/* Sidebar toggle support */
+/* Keep headings unchanged */
+[role="main"] h1,
+[role="main"] h2,
+[role="main"] h3,
+[role="main"] h4,
+[role="main"] h5,
+[role="main"] h6 {
+  color: inherit;
+}
+
+/* ===== Sidebar toggle support ===== */
+
 .bs-sidebar .nav li {
   position: relative;
 }
@@ -121,17 +123,15 @@ a[rel="next"],
   display: block;
 }
 
-/* Mobile */
+/* ===== Mobile ===== */
+
 @media (max-width: 991.98px) {
-  .nav-second-row {
+  .navbar .navbar-collapse {
     display: block !important;
   }
 
-  .site-title-row {
-    margin-bottom: 0;
-  }
-
-  .site-title-row .navbar-brand {
+  .navbar .navbar-brand {
     font-size: 1.45rem;
+    width: auto;
   }
 }
