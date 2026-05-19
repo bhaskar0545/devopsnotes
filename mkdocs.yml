@@ -11,8 +11,8 @@ nav:
   - Home: index.md
   - ML Ops:
       - Basics: MLOps/Basics.md
-      - DVC:
-          - DVC Tools: MLOps/dvc.md
+      - DVC: MLOps/dvc.md
+      - MLOpsCheatSheet: MLOps/MLOpsCheetsheet.md
       - Refs: MLOps/Refs.md
   - K8s:
       - Basics: kubernetes/concepts.md
@@ -21,7 +21,8 @@ nav:
           - Ingress: kubernets/ingress.md
       - Troubleshooting: troubleshooting.md
       - Cheatsheet: cheatsheets.md
-
+  - Python:
+      - CheetSheet: Python/CheatSheet.md
 plugins:
   - search
 
