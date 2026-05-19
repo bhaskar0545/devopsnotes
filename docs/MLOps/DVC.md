@@ -62,3 +62,42 @@ Data versioning tools provide:
 - Metadata
 - Reproducible ML pipelines
 That’s why Git alone is not enough.
+
+# Working with DVC
+The folder will contain both source code and the data folder.
+the folder structure would looks like below
+```
+ls wine-prediction-model
+.dvc
+|_ .gitignore
+|_ config
+data
+|_ .gitignore
+|_ dataset.csv.dvc
+.dvcignore
+.gitignore
+requirements.txt
+train.py
+utils.py
+```
+The `data` folder contains the data set `.csv` file and the metadata file `.csv.dvc`
+data set `.csv` will be pushed to dvc remote (S3 bucket) and the `dvc` file will be pushed to gitrepo along with the source code.
+
+**Install DVC**
+	`python -m pip install dvc`
+**Create a dvc repo**
+	`dvc init`
+**Add file to the dvc repo**
+	`dvc add data/wine_data.csv`
+	*Note: this creates .dvc file which holds the meta data and checksome of the source file.*
+**Add a remote S3 bucket to the DVC**
+	`dvc remote add -d wineremote s3://<bucketname>`
+	*Note: AWS S3 credentials should be configured on the terminal*
+	`aws configure`
+	enter the ID and access key
+	To generate the access ID and key go to
+	AWS console -> settings -> security credentials -> access keys  
+**Push the file to S3 bucket**
+	`dvc push`
+	Note: Make sure dvc_s3 python module is installed.
+	`python -m pip install dvc_s3`
