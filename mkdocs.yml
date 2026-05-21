@@ -12,7 +12,7 @@ nav:
   - ML Ops:
       - Basics: MLOps/Basics.md
       - DVC: MLOps/dvc.md
-      - MLOpsCheatSheet: MLOps/MLOpsCheetsheet.md
+      - MLOpsCheatSheet: MLOps/MLOpsCheatSheet.md
       - Refs: MLOps/Refs.md
   - K8s:
       - Basics: kubernetes/concepts.md
@@ -22,7 +22,7 @@ nav:
       - Troubleshooting: troubleshooting.md
       - Cheatsheet: cheatsheets.md
   - Python:
-      - CheetSheet: Python/CheatSheet.md
+      - CheatSheet: Python/CheatSheet.md
 plugins:
   - search
 
