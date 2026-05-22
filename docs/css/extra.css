@@ -3,7 +3,7 @@
    - site title on first row
    - nav on second row
    - search stays on right
-   - GitHub-like content typography
+   - GitHub-like readable main content
    - blue H1 page headings
    - sidebar toggle support
    ------------------------------------------------- */
@@ -107,15 +107,18 @@
   display: block;
 }
 
-/* ===== GitHub-like content typography ===== */
+/* ===== GitHub-like main content ===== */
 
 [role="main"] {
   color: #24292f !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji" !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
   font-size: 16px;
   line-height: 1.5;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
+/* Force readable dark text inside rendered markdown */
 [role="main"],
 [role="main"] p,
 [role="main"] li,
@@ -124,24 +127,33 @@
 [role="main"] blockquote,
 [role="main"] div,
 [role="main"] span {
-  color: #24292f;
+  color: #24292f !important;
 }
 
+/* Body text rhythm */
 [role="main"] p,
 [role="main"] li,
 [role="main"] td,
 [role="main"] th,
 [role="main"] blockquote {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
 }
 
-/* Main page heading in blue */
+/* Strong/bold text */
+[role="main"] strong,
+[role="main"] b {
+  color: #24292f !important;
+  font-weight: 600 !important;
+}
+
+/* Headings */
 [role="main"] h1,
 [role="main"] h1 a {
   color: #0969da !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600 !important;
   line-height: 1.25;
 }
 
@@ -150,14 +162,37 @@
 [role="main"] h4,
 [role="main"] h5,
 [role="main"] h6 {
-  color: #24292f;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-weight: 600;
+  color: #24292f !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600 !important;
   line-height: 1.25;
 }
 
+/* Paragraph and section spacing closer to GitHub */
+[role="main"] p,
+[role="main"] blockquote,
+[role="main"] ul,
+[role="main"] ol,
+[role="main"] dl,
+[role="main"] table,
+[role="main"] pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+[role="main"] ul,
+[role="main"] ol {
+  padding-left: 2em;
+}
+
+[role="main"] li + li {
+  margin-top: 0.25em;
+}
+
+/* Links */
 [role="main"] a {
   color: #0969da;
+  text-decoration: none;
 }
 
 [role="main"] a:hover {
@@ -165,7 +200,7 @@
   text-decoration: underline;
 }
 
-/* ===== GitHub-like code ===== */
+/* ===== Code ===== */
 
 [role="main"] code,
 [role="main"] pre,
@@ -195,7 +230,7 @@ samp {
   border-radius: 0;
 }
 
-/* ===== GitHub-like tables ===== */
+/* ===== Tables ===== */
 
 [role="main"] table {
   display: block;
@@ -204,15 +239,13 @@ samp {
   overflow: auto;
   border-spacing: 0;
   border-collapse: collapse;
-  margin-top: 0;
-  margin-bottom: 16px;
 }
 
 [role="main"] table th,
 [role="main"] table td {
   padding: 6px 13px;
   border: 1px solid #d0d7de;
-  color: #24292f;
+  color: #24292f !important;
 }
 
 [role="main"] table th {
@@ -229,22 +262,21 @@ samp {
   background-color: #f6f8fa;
 }
 
-/* ===== Blockquotes and lists ===== */
+/* ===== Blockquotes ===== */
 
 [role="main"] blockquote {
   padding: 0 1em;
-  color: #57606a;
+  color: #57606a !important;
   border-left: 0.25em solid #d0d7de;
-  margin: 0 0 16px 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-[role="main"] ul,
-[role="main"] ol {
-  padding-left: 2em;
-}
+/* ===== Images ===== */
 
-[role="main"] li + li {
-  margin-top: 0.25em;
+[role="main"] img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ===== Mobile ===== */
@@ -258,19 +290,4 @@ samp {
     font-size: 1.45rem;
     width: auto;
   }
-}
-
-/* Force darker and slightly stronger main content text */
-[role="main"],
-[role="main"] p,
-[role="main"] li,
-[role="main"] td,
-[role="main"] th,
-[role="main"] blockquote,
-[role="main"] span,
-[role="main"] div {
-  color: #24292f !important;
-  font-weight: 400 !important;
-  -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto;
 }
