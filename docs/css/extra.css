@@ -259,3 +259,18 @@ samp {
     width: auto;
   }
 }
+
+/* Force darker and slightly stronger main content text */
+[role="main"],
+[role="main"] p,
+[role="main"] li,
+[role="main"] td,
+[role="main"] th,
+[role="main"] blockquote,
+[role="main"] span,
+[role="main"] div {
+  color: #24292f !important;
+  font-weight: 400 !important;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
