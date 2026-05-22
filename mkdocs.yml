@@ -11,7 +11,8 @@ nav:
   - Home: index.md
   - ML Ops:
       - Basics: MLOps/Basics.md
-      - DVC: MLOps/dvc.md
+      - DVC: MLOps/DVC.md
+      - ExperimentTracking_MLFlow: MLOps/ExperimentTracking_MLFlow.md
       - MLOpsCheatSheet: MLOps/MLOpsCheatSheet.md
       - Refs: MLOps/Refs.md
   - K8s:
