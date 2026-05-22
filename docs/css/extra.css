@@ -3,7 +3,8 @@
    - site title on first row
    - nav on second row
    - search stays on right
-   - slightly larger/darker page content only
+   - GitHub-like content typography
+   - blue H1 page headings
    - sidebar toggle support
    ------------------------------------------------- */
 
@@ -15,7 +16,6 @@
   align-items: center;
 }
 
-/* Force site title onto its own row */
 .navbar .navbar-brand {
   display: block;
   float: none;
@@ -25,9 +25,10 @@
   padding-bottom: 0.45rem;
   font-size: 1.8rem;
   line-height: 1.2;
+  font-family: "Segoe UI", "Segoe UI Semibold", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
 }
 
-/* Second row for nav/search */
 .navbar .navbar-collapse {
   width: 100%;
   display: flex !important;
@@ -36,41 +37,24 @@
   flex-wrap: wrap;
 }
 
-/* Left nav takes remaining space */
 .navbar .navbar-collapse > .navbar-nav:first-child {
   flex: 1 1 auto;
 }
 
-/* Right group stays right */
 .navbar .navbar-collapse > .navbar-nav.ms-md-auto,
 .navbar .navbar-collapse > .navbar-right,
 .navbar .navbar-collapse > ul:last-child {
   margin-left: auto;
 }
 
-/* ===== Main page content only ===== */
+/* ===== Sidebar ===== */
 
-[role="main"] p,
-[role="main"] li,
-[role="main"] td,
-[role="main"] th,
-[role="main"] blockquote {
-  font-size: 1.06rem;
-  line-height: 1.8;
-  color: #2f2f2f;
+.bs-sidebar,
+.bs-sidebar .nav,
+.bs-sidebar .nav a,
+.dropdown-menu {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
-
-/* Keep headings unchanged */
-[role="main"] h1,
-[role="main"] h2,
-[role="main"] h3,
-[role="main"] h4,
-[role="main"] h5,
-[role="main"] h6 {
-  color: inherit;
-}
-
-/* ===== Sidebar toggle support ===== */
 
 .bs-sidebar .nav li {
   position: relative;
@@ -123,52 +107,24 @@
   display: block;
 }
 
-/* ===== Mobile ===== */
-
-@media (max-width: 991.98px) {
-  .navbar .navbar-collapse {
-    display: block !important;
-  }
-
-  .navbar .navbar-brand {
-    font-size: 1.45rem;
-    width: auto;
-  }
-}
-
-/* ===== Polished font stacks ===== */
-
-/* Body text */
-body,
-[role="main"],
-.bs-sidebar,
-.navbar,
-.dropdown-menu {
-  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6,
-.navbar-brand {
-  font-family: "Segoe UI", "Segoe UI Semibold", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 600;
-}
-
-/* Code */
-code,
-pre,
-kbd,
-samp {
-  font-family: "Cascadia Code", "Cascadia Mono", Consolas, "Courier New", monospace;
-}
-
-/* ===== GitHub-like typography for page content ===== */
+/* ===== GitHub-like content typography ===== */
 
 [role="main"] {
-  color: #24292f;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #24292f !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji" !important;
   font-size: 16px;
   line-height: 1.5;
+}
+
+[role="main"],
+[role="main"] p,
+[role="main"] li,
+[role="main"] td,
+[role="main"] th,
+[role="main"] blockquote,
+[role="main"] div,
+[role="main"] span {
+  color: #24292f;
 }
 
 [role="main"] p,
@@ -176,40 +132,55 @@ samp {
 [role="main"] td,
 [role="main"] th,
 [role="main"] blockquote {
-  color: #24292f;
   font-size: 16px;
   line-height: 1.5;
 }
 
+/* Main page heading in blue */
 [role="main"] h1,
+[role="main"] h1 a {
+  color: #0969da !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-weight: 600;
+  line-height: 1.25;
+}
+
 [role="main"] h2,
 [role="main"] h3,
 [role="main"] h4,
 [role="main"] h5,
 [role="main"] h6 {
   color: #24292f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: 600;
   line-height: 1.25;
 }
 
-/* ===== GitHub-like code font ===== */
+[role="main"] a {
+  color: #0969da;
+}
+
+[role="main"] a:hover {
+  color: #0969da;
+  text-decoration: underline;
+}
+
+/* ===== GitHub-like code ===== */
 
 [role="main"] code,
 [role="main"] pre,
 kbd,
 samp {
-  font-family: ui-monospace, SFMono-Regular, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
   font-size: 0.9em;
 }
 
-/* Inline code */
 [role="main"] code {
   background-color: rgba(175, 184, 193, 0.2);
   border-radius: 6px;
   padding: 0.2em 0.4em;
 }
 
-/* Code blocks */
 [role="main"] pre {
   background-color: #f6f8fa;
   border-radius: 6px;
@@ -258,7 +229,7 @@ samp {
   background-color: #f6f8fa;
 }
 
-/* ===== Blockquotes ===== */
+/* ===== Blockquotes and lists ===== */
 
 [role="main"] blockquote {
   padding: 0 1em;
@@ -267,8 +238,6 @@ samp {
   margin: 0 0 16px 0;
 }
 
-/* ===== Better spacing for lists ===== */
-
 [role="main"] ul,
 [role="main"] ol {
   padding-left: 2em;
@@ -276,4 +245,17 @@ samp {
 
 [role="main"] li + li {
   margin-top: 0.25em;
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    display: block !important;
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.45rem;
+    width: auto;
+  }
 }
