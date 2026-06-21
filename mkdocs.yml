@@ -20,9 +20,10 @@ nav:
       - Networking:
           - Service: kubernetes/service.md
           - Ingress: kubernets/ingress.md
-      - Troubleshooting: troubleshooting.md
-      - Cheatsheet: cheatsheets.md
+      - Troubleshooting: k8s/troubleshooting.md
+      - Cheatsheet: k8s/K8s_CheatSheet.md
   - Python:
+      - intro: Python/Intro.md
       - CheatSheet: Python/CheatSheet.md
 plugins:
   - search

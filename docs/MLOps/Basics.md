@@ -1,4 +1,4 @@
-## What is Machine Learning?
+# What is Machine Learning?
 **Machine Learning (ML)** is a branch of **Artificial Intelligence (AI)** that enables computers to **learn from data and improve their performance without being explicitly programmed for every task**.
 
 With normal programming, you write rules yourself. With machine learning, you give the computer examples, and it figures out the rules.
@@ -10,7 +10,7 @@ Think about **email spam detection**:
 - Over time, it gets better at identifying spam automatically
 That learning process is **machine learning**.
 
-## What is a Model?
+# What is a Model?
 A model is the final output of machine learning.
 It is not the data. It is not the algorithm. It is the pattern the algorithm learned from the data.
 
@@ -23,7 +23,8 @@ A mathematical function the computer created
 *How Data Scientists Create a Simple Model.*
 
 Think of this as the “hello world” of ML.
-### Start with a Small Dataset
+
+**Start with a Small Dataset**
 Every model begins with data.
 Example: You want to predict a spam mail based on data like:
 - Set of spam mails.
@@ -31,20 +32,23 @@ Example: You want to predict a spam mail based on data like:
 This dataset will have:
 Inputs (features): the spam mails with spam data
 Output (label): the spam mails
-### Split the Data: Train vs Test
+
+**Split the Data: Train vs Test**
 Before training, data scientists split the dataset into:
 - Training data (usually ~80%) The part the model learns from.
 - Testing data (usually ~20%) The part used later to check if the model learned properly.
 
 Why? Because you should never test a student with questions they already memorized.
-### Choose a Simple Model
+
+**Choose a Simple Model**
 For beginners, data scientists usually start with a simple algorithm, like:
 - Logistic Regression (for classification)
 - Decision Tree
 - k-Nearest Neighbors (KNN)
 
 For the spam mail example, Logistic Regression or Decision Tree works great.
-### Train the Model
+
+**Train the Model**
 Training means:
 - Give the model training data
 - Let it “learn” patterns between measurements and flower species
@@ -52,14 +56,15 @@ Training means:
 
 You don’t manually code patterns. The model learns them automatically.
 
-### Test the Model
+**Test the Model**
 Now, evaluate it using the test data.
 
 The goal is to see:
 - How many predictions are correct?
 - Where is the model making mistakes?
 This step tells you if the model is ready or needs improvement.
-### Improve (If Needed)
+
+**Improve (If Needed)**
 Beginners usually follow simple improvement steps:
 - Remove noisy or incorrect data
 - Try a different model
@@ -67,7 +72,8 @@ Beginners usually follow simple improvement steps:
 - Add more training samples
 
 Even small changes can boost accuracy.
-### Save the Model
+
+**Save the Model**
 Once the model performs well, you save it as a file. 
 Example formats:
 - .pkl
