@@ -1,0 +1,293 @@
+/* -------------------------------------------------
+   Lux customizations
+   - site title on first row
+   - nav on second row
+   - search stays on right
+   - GitHub-like readable main content
+   - blue H1 page headings
+   - sidebar toggle support
+   ------------------------------------------------- */
+
+/* ===== Navbar layout ===== */
+
+.navbar .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navbar .navbar-brand {
+  display: block;
+  float: none;
+  width: 100%;
+  margin-right: 0;
+  padding-top: 0.25rem;
+  padding-bottom: 0.45rem;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  font-family: "Segoe UI", "Segoe UI Semibold", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+}
+
+.navbar .navbar-collapse {
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navbar .navbar-collapse > .navbar-nav:first-child {
+  flex: 1 1 auto;
+}
+
+.navbar .navbar-collapse > .navbar-nav.ms-md-auto,
+.navbar .navbar-collapse > .navbar-right,
+.navbar .navbar-collapse > ul:last-child {
+  margin-left: auto;
+}
+
+/* ===== Sidebar ===== */
+
+.bs-sidebar,
+.bs-sidebar .nav,
+.bs-sidebar .nav a,
+.dropdown-menu {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+.bs-sidebar .nav li {
+  position: relative;
+}
+
+.bs-sidebar .nav li.has-children > a {
+  display: inline-block;
+  width: calc(100% - 34px);
+}
+
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.sidebar-toggle-btn:hover,
+.sidebar-toggle-btn:focus {
+  background: rgba(0, 0, 0, 0.06);
+  outline: none;
+}
+
+.sidebar-caret {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid #777;
+  border-bottom: 2px solid #777;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+  margin-top: 5px;
+}
+
+.bs-sidebar .nav li.is-expanded > .sidebar-toggle-btn .sidebar-caret {
+  transform: rotate(45deg);
+}
+
+.bs-sidebar .nav li.is-collapsed > ul {
+  display: none;
+}
+
+.bs-sidebar .nav li.is-expanded > ul {
+  display: block;
+}
+
+/* ===== GitHub-like main content ===== */
+
+[role="main"] {
+  color: #24292f !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Force readable dark text inside rendered markdown */
+[role="main"],
+[role="main"] p,
+[role="main"] li,
+[role="main"] td,
+[role="main"] th,
+[role="main"] blockquote,
+[role="main"] div,
+[role="main"] span {
+  color: #24292f !important;
+}
+
+/* Body text rhythm */
+[role="main"] p,
+[role="main"] li,
+[role="main"] td,
+[role="main"] th,
+[role="main"] blockquote {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+}
+
+/* Strong/bold text */
+[role="main"] strong,
+[role="main"] b {
+  color: #24292f !important;
+  font-weight: 600 !important;
+}
+
+/* Headings */
+[role="main"] h1,
+[role="main"] h1 a {
+  color: #0969da !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600 !important;
+  line-height: 1.25;
+}
+
+[role="main"] h2,
+[role="main"] h3,
+[role="main"] h4,
+[role="main"] h5,
+[role="main"] h6 {
+  color: #24292f !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600 !important;
+  line-height: 1.25;
+}
+
+/* Paragraph and section spacing closer to GitHub */
+[role="main"] p,
+[role="main"] blockquote,
+[role="main"] ul,
+[role="main"] ol,
+[role="main"] dl,
+[role="main"] table,
+[role="main"] pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+[role="main"] ul,
+[role="main"] ol {
+  padding-left: 2em;
+}
+
+[role="main"] li + li {
+  margin-top: 0.25em;
+}
+
+/* Links */
+[role="main"] a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+[role="main"] a:hover {
+  color: #0969da;
+  text-decoration: underline;
+}
+
+/* ===== Code ===== */
+
+[role="main"] code,
+[role="main"] pre,
+kbd,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.9em;
+}
+
+[role="main"] code {
+  background-color: rgba(175, 184, 193, 0.2);
+  border-radius: 6px;
+  padding: 0.2em 0.4em;
+}
+
+[role="main"] pre {
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  padding: 16px;
+  line-height: 1.45;
+  overflow: auto;
+}
+
+[role="main"] pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* ===== Tables ===== */
+
+[role="main"] table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+[role="main"] table th,
+[role="main"] table td {
+  padding: 6px 13px;
+  border: 1px solid #d0d7de;
+  color: #24292f !important;
+}
+
+[role="main"] table th {
+  font-weight: 600;
+  background-color: #f6f8fa;
+}
+
+[role="main"] table tr {
+  background-color: #ffffff;
+  border-top: 1px solid #d8dee4;
+}
+
+[role="main"] table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+/* ===== Blockquotes ===== */
+
+[role="main"] blockquote {
+  padding: 0 1em;
+  color: #57606a !important;
+  border-left: 0.25em solid #d0d7de;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ===== Images ===== */
+
+[role="main"] img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    display: block !important;
+  }
+
+  .navbar .navbar-brand {
+    font-size: 1.45rem;
+    width: auto;
+  }
+}
